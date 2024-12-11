@@ -42,7 +42,7 @@
             labelyourname = new Label();
             lblLetsStart = new Label();
             lblPaused = new Label();
-            panel3 = new Panel();
+            panelGame = new Panel();
             trophy = new PictureBox();
             explosion = new PictureBox();
             Player = new PictureBox();
@@ -53,7 +53,7 @@
             timer1 = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            panel3.SuspendLayout();
+            panelGame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)trophy).BeginInit();
             ((System.ComponentModel.ISupportInitialize)explosion).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Player).BeginInit();
@@ -201,23 +201,23 @@
             lblPaused.Text = "Game Paused";
             lblPaused.Visible = false;
             // 
-            // panel3
+            // panelGame
             // 
-            panel3.BackColor = Color.Black;
-            panel3.BorderStyle = BorderStyle.Fixed3D;
-            panel3.Controls.Add(lblPaused);
-            panel3.Controls.Add(lblLetsStart);
-            panel3.Controls.Add(trophy);
-            panel3.Controls.Add(explosion);
-            panel3.Controls.Add(Player);
-            panel3.Controls.Add(AI2);
-            panel3.Controls.Add(AI1);
-            panel3.Controls.Add(road2);
-            panel3.Controls.Add(road1);
-            panel3.Location = new Point(262, 12);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(483, 555);
-            panel3.TabIndex = 2;
+            panelGame.BackColor = Color.Black;
+            panelGame.BorderStyle = BorderStyle.Fixed3D;
+            panelGame.Controls.Add(lblPaused);
+            panelGame.Controls.Add(lblLetsStart);
+            panelGame.Controls.Add(trophy);
+            panelGame.Controls.Add(explosion);
+            panelGame.Controls.Add(Player);
+            panelGame.Controls.Add(AI2);
+            panelGame.Controls.Add(AI1);
+            panelGame.Controls.Add(road2);
+            panelGame.Controls.Add(road1);
+            panelGame.Location = new Point(262, 12);
+            panelGame.Name = "panelGame";
+            panelGame.Size = new Size(483, 555);
+            panelGame.TabIndex = 2;
             // 
             // trophy
             // 
@@ -245,7 +245,7 @@
             // 
             Player.BackColor = Color.Transparent;
             Player.Image = Properties.Resources.CarRed;
-            Player.Location = new Point(211, 430);
+            Player.Location = new Point(212, 430);
             Player.Name = "Player";
             Player.Size = new Size(58, 98);
             Player.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -306,7 +306,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1047, 579);
-            Controls.Add(panel3);
+            Controls.Add(panelGame);
             Controls.Add(panel2);
             Controls.Add(panel1);
             KeyPreview = true;
@@ -318,8 +318,8 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            panelGame.ResumeLayout(false);
+            panelGame.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)trophy).EndInit();
             ((System.ComponentModel.ISupportInitialize)explosion).EndInit();
             ((System.ComponentModel.ISupportInitialize)Player).EndInit();
@@ -338,7 +338,7 @@
         private Button btnStart;
         private TextBox inputName;
         private Label labelyourname;
-        private Panel panel3;
+        private Panel panelGame;
         private Label lblLetsStart;
         private Label lblPaused;
         private Button btnreset;
