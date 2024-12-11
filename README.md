@@ -11,6 +11,4 @@ Sebelum edit project pastikan file project sudah terbaru dengan cara
 git fetch
 git pull origin main
 ```
-Konfirmasi sebelum edit project untuk menghindari konflik
-
-
+Konfirmasi digrup sebelum edit/push project untuk menghindari konflik
