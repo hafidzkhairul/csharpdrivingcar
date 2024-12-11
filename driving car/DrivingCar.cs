@@ -7,6 +7,7 @@ using System.Numerics;
 > .Top => posisi sumbu Y object
     > Cek di properties > location
 > timer, timer start = game jalan, timer stop = game berhenti
+
  */
 
 namespace driving_car
