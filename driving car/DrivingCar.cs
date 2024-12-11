@@ -99,6 +99,7 @@ namespace driving_car
                     lblPaused.Visible = false;
                     btnPause.Text = "Pause";
                     GamePaused = false;
+                    panel3.Focus();
                     timer1.Start();
                 }
             }
@@ -144,13 +145,13 @@ namespace driving_car
             if (AI1.Top > panel3.Height)
             {
                 changeAI1(); // change the AI car images once they left the scene
-                AI1.Left = rnd.Next(2, 160); // random numbers where they appear on the left
+                AI1.Left = rnd.Next(2, 180); // random numbers where they appear on the left
                 AI1.Top = rnd.Next(100, 200) * -1; // random numbers where they appear on top
             }
             if (AI2.Top > panel3.Height)
             {
                 changeAI2(); // change the AI car images once they left the scene
-                AI2.Left = rnd.Next(185, 327); // random numbers where they appear on the left
+                AI2.Left = rnd.Next(240, 410); // random numbers where they appear on the left
                 AI2.Top = rnd.Next(100, 200) * -1; // random numbers where they appear on top
             }
             // end of respawning the AIs and image changing

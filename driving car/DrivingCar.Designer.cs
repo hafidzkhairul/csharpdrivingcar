@@ -36,12 +36,12 @@
             label1 = new Label();
             panel2 = new Panel();
             btnreset = new Button();
-            lblLetsStart = new Label();
-            lblPaused = new Label();
             btnPause = new Button();
             btnStart = new Button();
             inputName = new TextBox();
             labelyourname = new Label();
+            lblLetsStart = new Label();
+            lblPaused = new Label();
             panel3 = new Panel();
             trophy = new PictureBox();
             explosion = new PictureBox();
@@ -136,32 +136,6 @@
             btnreset.UseVisualStyleBackColor = true;
             btnreset.Click += btnreset_Click;
             // 
-            // lblLetsStart
-            // 
-            lblLetsStart.AutoSize = true;
-            lblLetsStart.BackColor = Color.Transparent;
-            lblLetsStart.Font = new Font("Arial Rounded MT Bold", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblLetsStart.ForeColor = Color.White;
-            lblLetsStart.Location = new Point(81, 209);
-            lblLetsStart.Name = "lblLetsStart";
-            lblLetsStart.RightToLeft = RightToLeft.No;
-            lblLetsStart.Size = new Size(313, 55);
-            lblLetsStart.TabIndex = 0;
-            lblLetsStart.Text = "Lets Start !!!";
-            // 
-            // lblPaused
-            // 
-            lblPaused.AutoSize = true;
-            lblPaused.BackColor = Color.Transparent;
-            lblPaused.Font = new Font("Arial Rounded MT Bold", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPaused.ForeColor = Color.White;
-            lblPaused.Location = new Point(93, 264);
-            lblPaused.Name = "lblPaused";
-            lblPaused.Size = new Size(268, 43);
-            lblPaused.TabIndex = 3;
-            lblPaused.Text = "Game Paused";
-            lblPaused.Visible = false;
-            // 
             // btnPause
             // 
             btnPause.Location = new Point(99, 184);
@@ -200,6 +174,32 @@
             labelyourname.Size = new Size(134, 23);
             labelyourname.TabIndex = 0;
             labelyourname.Text = "Your Name : ";
+            // 
+            // lblLetsStart
+            // 
+            lblLetsStart.AutoSize = true;
+            lblLetsStart.BackColor = Color.Transparent;
+            lblLetsStart.Font = new Font("Arial Rounded MT Bold", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblLetsStart.ForeColor = Color.White;
+            lblLetsStart.Location = new Point(81, 209);
+            lblLetsStart.Name = "lblLetsStart";
+            lblLetsStart.RightToLeft = RightToLeft.No;
+            lblLetsStart.Size = new Size(313, 55);
+            lblLetsStart.TabIndex = 0;
+            lblLetsStart.Text = "Lets Start !!!";
+            // 
+            // lblPaused
+            // 
+            lblPaused.AutoSize = true;
+            lblPaused.BackColor = Color.Transparent;
+            lblPaused.Font = new Font("Arial Rounded MT Bold", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPaused.ForeColor = Color.White;
+            lblPaused.Location = new Point(93, 264);
+            lblPaused.Name = "lblPaused";
+            lblPaused.Size = new Size(268, 43);
+            lblPaused.TabIndex = 3;
+            lblPaused.Text = "Game Paused";
+            lblPaused.Visible = false;
             // 
             // panel3
             // 
@@ -256,7 +256,7 @@
             // 
             AI2.BackColor = Color.Transparent;
             AI2.Image = Properties.Resources.carPink;
-            AI2.Location = new Point(290, 65);
+            AI2.Location = new Point(418, 55);
             AI2.Name = "AI2";
             AI2.Size = new Size(58, 98);
             AI2.SizeMode = PictureBoxSizeMode.StretchImage;
