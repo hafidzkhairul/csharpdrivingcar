@@ -2,6 +2,8 @@
 
 ### Final project algoritma komputasi
 
+Link referensi https://www.mooict.com/c-tutorial-top-down-car-racing-game-with-visual-studio/
+
 Clone repository
 ```
 git clone https://github.com/hafidzkhairul/csharpdrivingcar.git
