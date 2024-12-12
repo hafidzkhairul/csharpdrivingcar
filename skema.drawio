@@ -97,10 +97,10 @@
           <mxGeometry x="292.5" y="1660" width="310" height="60" as="geometry" />
         </mxCell>
         <mxCell id="geuPRDKl9PWcOQ5PIFQ6-35" value="new game" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="377.5" y="1770" width="146" height="60" as="geometry" />
+          <mxGeometry x="374.5" y="1770" width="146" height="60" as="geometry" />
         </mxCell>
         <mxCell id="geuPRDKl9PWcOQ5PIFQ6-36" value="exit" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="380" y="1850" width="145" height="60" as="geometry" />
+          <mxGeometry x="375" y="1850" width="145" height="60" as="geometry" />
         </mxCell>
         <mxCell id="geuPRDKl9PWcOQ5PIFQ6-37" value="name car" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="380.5" y="1590" width="140" height="30" as="geometry" />
