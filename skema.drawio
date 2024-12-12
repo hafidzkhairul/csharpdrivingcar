@@ -76,7 +76,7 @@
           <mxGeometry x="285" y="830" width="100" height="30" as="geometry" />
         </mxCell>
         <mxCell id="geuPRDKl9PWcOQ5PIFQ6-26" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="160" y="1170" width="580" height="810" as="geometry" />
+          <mxGeometry x="160" y="1170" width="580" height="960" as="geometry" />
         </mxCell>
         <mxCell id="geuPRDKl9PWcOQ5PIFQ6-29" value="design menu" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="390.5" y="1120" width="90" height="30" as="geometry" />
@@ -85,49 +85,49 @@
           <mxGeometry x="295" y="1210" width="305" height="80" as="geometry" />
         </mxCell>
         <mxCell id="geuPRDKl9PWcOQ5PIFQ6-31" value="" style="triangle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="640" y="1410" width="60" height="80" as="geometry" />
+          <mxGeometry x="640" y="1440" width="60" height="80" as="geometry" />
         </mxCell>
         <mxCell id="geuPRDKl9PWcOQ5PIFQ6-32" value="" style="triangle;whiteSpace=wrap;html=1;rotation=-180;" parent="1" vertex="1">
-          <mxGeometry x="220" y="1410" width="60" height="80" as="geometry" />
+          <mxGeometry x="200" y="1450" width="60" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="geuPRDKl9PWcOQ5PIFQ6-33" value="select mobil" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="353" y="1380" width="194" height="130" as="geometry" />
+        <mxCell id="geuPRDKl9PWcOQ5PIFQ6-33" value="gambar mobil" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="327.25" y="1370" width="246.5" height="200" as="geometry" />
         </mxCell>
         <mxCell id="geuPRDKl9PWcOQ5PIFQ6-34" value="input player name" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="292.5" y="1590" width="310" height="60" as="geometry" />
+          <mxGeometry x="292.5" y="1660" width="310" height="60" as="geometry" />
         </mxCell>
         <mxCell id="geuPRDKl9PWcOQ5PIFQ6-35" value="new game" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="374.5" y="1690" width="146" height="60" as="geometry" />
+          <mxGeometry x="377.5" y="1770" width="146" height="60" as="geometry" />
         </mxCell>
         <mxCell id="geuPRDKl9PWcOQ5PIFQ6-36" value="exit" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="375" y="1780" width="145" height="60" as="geometry" />
+          <mxGeometry x="380" y="1850" width="145" height="60" as="geometry" />
         </mxCell>
         <mxCell id="geuPRDKl9PWcOQ5PIFQ6-37" value="name car" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="380" y="1520" width="140" height="30" as="geometry" />
+          <mxGeometry x="380.5" y="1590" width="140" height="30" as="geometry" />
         </mxCell>
         <mxCell id="geuPRDKl9PWcOQ5PIFQ6-38" value="choose your car" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="330" y="1330" width="240" height="30" as="geometry" />
         </mxCell>
         <mxCell id="geuPRDKl9PWcOQ5PIFQ6-39" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="147.5" y="2262" width="580" height="1070" as="geometry" />
+          <mxGeometry x="147.5" y="2262" width="580" height="998" as="geometry" />
         </mxCell>
         <mxCell id="geuPRDKl9PWcOQ5PIFQ6-40" value="design game" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="387.5" y="2220" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="geuPRDKl9PWcOQ5PIFQ6-43" value="score" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="370.25" y="3002" width="154.5" height="30" as="geometry" />
+          <mxGeometry x="370.5" y="2930" width="154.5" height="30" as="geometry" />
         </mxCell>
         <mxCell id="geuPRDKl9PWcOQ5PIFQ6-44" value="game" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="187.5" y="2302" width="500" height="670" as="geometry" />
+          <mxGeometry x="187.5" y="2302" width="500" height="608" as="geometry" />
         </mxCell>
         <mxCell id="geuPRDKl9PWcOQ5PIFQ6-45" value="start/pause/resume" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="360" y="3060" width="180" height="60" as="geometry" />
+          <mxGeometry x="358" y="2980" width="180" height="60" as="geometry" />
         </mxCell>
         <mxCell id="geuPRDKl9PWcOQ5PIFQ6-47" value="reset" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="360" y="3142" width="180" height="60" as="geometry" />
+          <mxGeometry x="360" y="3060" width="180" height="60" as="geometry" />
         </mxCell>
         <mxCell id="geuPRDKl9PWcOQ5PIFQ6-48" value="back to menu" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="360" y="3222" width="180" height="60" as="geometry" />
+          <mxGeometry x="360" y="3140" width="180" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
