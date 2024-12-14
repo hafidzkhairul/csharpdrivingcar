@@ -45,9 +45,9 @@
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(141, 29);
             label1.Name = "label1";
-            label1.Size = new Size(237, 45);
+            label1.Size = new Size(238, 45);
             label1.TabIndex = 0;
-            label1.Text = "ringroad racing";
+            label1.Text = "ringroad recing";
             // 
             // label2
             // 
