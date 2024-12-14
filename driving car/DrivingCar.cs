@@ -15,32 +15,40 @@ namespace driving_car
     public partial class DrivingCar : Form
     {
         //global variables
+        int level = 1;
         int carSpeed = 5;           //speed mobil player
         int roadSpeed = 5;          //speed jalanan
-        bool carLeft;               //true = belok kiri
-        bool carRight;              //true = belok kanan
         int trafficSpeed = 5;       //speed kendaraan
         int Score = 0;
-        int HighScore = 0;
-        Random rnd = new Random();
+        int finish = 1000;
+        bool carLeft;               //true = belok kiri
+        bool carRight;              //true = belok kanan
         bool GameStarted = false;   //true = game dimulai
         bool GamePaused = false;    //true = game dipause
+        bool GameOver = false;    //true = game dipause
+        Random rnd = new Random();
+        Menu menu = new Menu();
+        Level lvl = new Level();
+
         public DrivingCar()
         {
             InitializeComponent();
-            Reset();        //run fungsi reset pas awal run project
+            Reset();
         }
-        
+
         //reset game
         private void Reset()
         {
-            trophy.Visible = false; // hide the trophy image
             explosion.Visible = false; // hide the explosion image
-            trafficSpeed = 5; // set the traffic back to default
-            roadSpeed = 5; // set the road speed back to default
+            trafficSpeed = Level.trafficSpeed; // set the traffic back to default
+            roadSpeed = Level.roadSpeed; // set the road speed back to default
+            level = Level.level;
+            carSpeed = Level.carSpeed;
+            menu.SelectCar(Menu.num_car, Player);
+            lbllevel.Text = level.ToString();
             Score = 0; // reset score to 0
-            Player.Left = 211; // reset player left
-            Player.Top = 430; // reset player top
+            Player.Left = 224; // reset player left
+            Player.Top = 562; // reset player top
             carLeft = false; // reset the moving left to false
             carRight = false; // reset the moving right to false
             // pindah posisi AI ke luar screen
@@ -49,37 +57,18 @@ namespace driving_car
             AI2.Left = 294;
             AI2.Top = -185;
             //reset the road to their default position
-            road1.Left = 81;
-            road1.Top = -2;
-            road2.Left = 81;
-            road2.Top = -580;
+            road1.Left = 83;
+            road1.Top = -7;
+            road2.Left = 83;
+            road2.Top = -770;
             //Stop the game
             GameStarted = false;
             GamePaused = false;
+            GameOver = false;
+            panelPause.Visible = false;
+            lblStart.Visible = true;
             timer1.Stop();
 
-        }
-
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-            if (!GameStarted)
-            {
-                //nama harus diisi
-                if (inputName.TextLength == 0)
-                {
-                    MessageBox.Show("Tulis nama sek");
-                }
-                else
-                {
-                    Reset();        //reset semua object
-                    panelGame.Focus();      //pindah focus ke panel game
-                    GameStarted = true;     //set to true
-                    lblLetsStart.Visible = false;   //hide label lets start
-                    lblPaused.Visible = false;      //hide label paused
-                    //start the timer
-                    timer1.Start();     //start game
-                }
-            }
         }
 
         private void btnPause_Click(object sender, EventArgs e)
@@ -87,31 +76,42 @@ namespace driving_car
             pause();
         }
 
-        private void btnreset_Click(object sender, EventArgs e)
+        private void btnResume_Click(object sender, EventArgs e)
         {
-            lblPaused.Visible = false;      //hide label paused
-            lblLetsStart.Visible = true;    //show label lets start
+            pause();
+        }
+
+        private void btnrestart_Click(object sender, EventArgs e)
+        {
             Reset();
+        }
+
+        private void btnmenu_Click(object sender, EventArgs e)
+        {
+            menu.Show();
+            this.Close();
         }
 
         private void pause()
         {
             //work only if game is started
-            if (GameStarted)
+            if (!GameOver)
             {
                 if (!GamePaused)    //pause game
                 {
-                    lblPaused.Visible = true;   //show label pause
-                    btnPause.Text = "Resume";   //ganti text button
+                    panelPause.Visible = true;   //show label pause
+                    lblgameover.Visible = false;
+                    lblpaused.Visible = true;
+                    lblfinish.Visible = false;
+                    btnResume.Visible = true;
+                    btnnext.Visible = false;
                     GamePaused = true;
                     timer1.Stop();              //stop game
                 }
                 else
                 {               //resume game
-                    lblPaused.Visible = false;
-                    btnPause.Text = "Pause";
+                    panelPause.Visible = false;
                     GamePaused = false;
-                    panelGame.Focus();      //pindah focus ke panel game
                     timer1.Start();         //start game
                 }
             }
@@ -121,38 +121,39 @@ namespace driving_car
         private void timer1_Tick(object sender, EventArgs e)
         {
             //fungsi ini jalan pas timer start/game start
-            Score++; // increase the score as we move
-            lblscore.Text = "" + Score; // show the score on the distance label
+            Score++;
+            panelGame.Focus();
+            lblscore.Text = "" + Score;
+            progressBar.Maximum = finish;
+            progressBar.Value = Score;
+            if (finish == Score)
+            {
+                finished();
+            }
             road1.Top += roadSpeed; // move the track 1 down with the += 
             road2.Top += roadSpeed; // move the track 2 down with the += 
             // if the track has gone past -580 then we set it back to default
-            // this means it will give us a seamless animation
-            //pindah posisi gambar jalan balek ke atas
-            if (road1.Top > 580)
+            if (road1.Top > 770)
             {
-                road1.Top = -580;
+                road1.Top = -770;
             }
-            if (road2.Top > 580)
+            if (road2.Top > 770)
             {
-                road2.Top = -580;
+                road2.Top = -770;
             }
-            // end of track animation.
 
             if (carLeft) { Player.Left -= carSpeed; } // move the car left if the car left is true
             if (carRight) { Player.Left += carSpeed; } // move the car right if the car right is true
-            // end of car moving
 
-            //bounce the car off the boundaries of the panel
             //mencegah player bergerak keluar panel game
             if (Player.Left < 1)
             {
-                carLeft = false; // stop the car from going off screen
+                carLeft = false;
             }
-            else if (Player.Left + Player.Width > 482)
+            else if (Player.Left + Player.Width > 441)
             {
                 carRight = false;
             }
-            // end of the boundaries checks
 
             //move the AI cars down
             AI1.Top += trafficSpeed;
@@ -160,60 +161,36 @@ namespace driving_car
             //respawn the AIs and change the their images
             if (AI1.Top > panelGame.Height)
             {
-                changeAI1(); // change the AI car images once they left the scene
+                menu.SelectCar(rnd.Next(1, 8), AI1); // change the AI car images once they left the scene
                 AI1.Left = rnd.Next(2, 180); // random posisi left
                 AI1.Top = rnd.Next(100, 200) * -1; // random posisi top
             }
             if (AI2.Top > panelGame.Height)
             {
-                changeAI2(); // change the AI car images once they left the scene
-                AI2.Left = rnd.Next(240, 410); // random numbers where they appear on the left
+                menu.SelectCar(rnd.Next(1, 8), AI2); // change the AI car images once they left the scene
+                AI2.Left = rnd.Next(240, 440); // random numbers where they appear on the left
                 AI2.Top = rnd.Next(100, 200) * -1; // random numbers where they appear on top
             }
-            // end of respawning the AIs and image changing
 
-            // hit test the player and AI
-            //below if statement is checking multiple conditions
             // if player hits AI1 OR player hits AI2
             if (Player.Bounds.IntersectsWith(AI1.Bounds) || Player.Bounds.IntersectsWith(AI2.Bounds))
             {
                 gameOver(); // this will run when the player hits an AI object
             }
-            // end of hit testing the player. 
-
-            // speed up the traffic
-            // below we are checking for multiple conditions
-            // if score is above 100 AND below 500
-            if (Score > 100 && Score < 500)
-            {
-                trafficSpeed = 6;
-                roadSpeed = 7;
-            }
-            // if score is above 500 AND below 1000
-            else if (Score > 500 && Score < 1000)
-            {
-                trafficSpeed = 7;
-                roadSpeed = 8;
-            }
-            // if score is above 1200
-            else if (Score > 1200)
-            {
-                trafficSpeed = 9;
-                roadSpeed = 10;
-            }
-            // end of the traffic speeding up
         }
 
         private void moveCar(object sender, KeyEventArgs e)
         {
-            //if the player pressed the left key AND the player is inside the panel
-            // then we set the car left boolean to true
+            if (!GameStarted && !GameOver)
+            {
+                GameStarted = true;
+                lblStart.Visible = false;
+                timer1.Start();
+            }
             if (e.KeyCode == Keys.Left && Player.Left > 0)
             {
                 carLeft = true;
             }
-            // if player pressed the right key and the player left plus player width is less then the panel1 width
-            // then we set the player right to true
             if (e.KeyCode == Keys.Right && Player.Left + Player.Width < panelGame.Width)
             {
                 carRight = true;
@@ -234,112 +211,23 @@ namespace driving_car
             }
 
             //space for pause the game
-            if(e.KeyCode == Keys.Space)
+            if (e.KeyCode == Keys.Space)
             {
                 pause();
             }
         }
 
-        private void changeAI1()
-        {
-            int num = rnd.Next(1, 8); // we set up a local variable to generate a number between 1 and 8
-            // by using a switch statement we can show any image based on that number
-            // switch statement will check which number has been generated and will displayer the images as requested
-            switch (num)
-            {
-                // if the number generated is 1 we show the green car
-                case 1:
-                    AI1.Image = Properties.Resources.carGreen;
-                    break;
-                // if the number generated is 2 we show the grey car
-                case 2:
-                    AI1.Image = Properties.Resources.carGrey;
-                    break;
-                // if the number generated is 3 we show the orange car
-                case 3:
-                    AI1.Image = Properties.Resources.carOrange;
-                    break;
-                // if the number generated is 4 we show the pink car
-                case 4:
-                    AI1.Image = Properties.Resources.carPink;
-                    break;
-                // if the number generated is 5 we show the red car
-                case 5:
-                    AI1.Image = Properties.Resources.CarRed;
-                    break;
-                // if the number generated is 6 we show the blue truck
-                case 6:
-                    AI1.Image = Properties.Resources.TruckBlue;
-                    break;
-                // if the number generated is 7 we show the white truck
-                case 7:
-                    AI1.Image = Properties.Resources.TruckWhite;
-                    break;
-                // if the number generated is 8 we show the ambulance
-                // this is why its important to name your images so they make logical sense
-                case 8:
-                    AI1.Image = Properties.Resources.ambulance;
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        private void changeAI2()
-        {
-            int num = rnd.Next(1, 8); // we set up a local variable to generate a number between 1 and 8
-            // by using a switch statement we can show any image based on that number
-            // switch statement will check which number has been generated and will displayer the images as requested
-            switch (num)
-            {
-                // if the number generated is 1 we show the green car
-                case 1:
-                    AI2.Image = Properties.Resources.carGreen;
-                    break;
-                // if the number generated is 2 we show the grey car
-                case 2:
-                    AI2.Image = Properties.Resources.carGrey;
-                    break;
-                // if the number generated is 3 we show the orange car
-                case 3:
-                    AI2.Image = Properties.Resources.carOrange;
-                    break;
-                // if the number generated is 4 we show the pink car
-                case 4:
-                    AI2.Image = Properties.Resources.carPink;
-                    break;
-                // if the number generated is 5 we show the red car
-                case 5:
-                    AI2.Image = Properties.Resources.CarRed;
-                    break;
-                // if the number generated is 6 we show the blue truck
-                case 6:
-                    AI2.Image = Properties.Resources.TruckBlue;
-                    break;
-                // if the number generated is 7 we show the white truck
-                case 7:
-                    AI2.Image = Properties.Resources.TruckWhite;
-                    break;
-                // if the number generated is 8 we show the ambulance
-                case 8:
-                    AI2.Image = Properties.Resources.ambulance;
-                    break;
-                default:
-                    break;
-            }
-        }
-
         private void gameOver()
         {
-            //add high score
-            if (Score > HighScore)
-            {
-                lblhighscore.Text = "" + Score;
-            }
             GameStarted = false;
             timer1.Stop(); // stop the timer
-            trophy.Visible = true; // change the trophy to visible
-
+            panelPause.Visible = true;
+            btnResume.Visible = false;
+            btnnext.Visible = false;
+            lblfinish.Visible = false;
+            lblpaused.Visible = false;
+            lblgameover.Visible = true;
+            GameOver = true;
             //show gambar ledakan ke atas gambar mobil player
             explosion.Visible = true; // make the image visible
             Player.Controls.Add(explosion); // add the explosion image on top of the player image
@@ -347,21 +235,63 @@ namespace driving_car
             explosion.BackColor = Color.Transparent; // change the background to transparent
             explosion.BringToFront();// bring to front of the player image
 
-            // final score trophy
-            // if the player score less than a 1000 we give them a bronze
-            if (Score < 1000)
+        }
+
+        private void finished()
+        {
+            timer1.Stop();
+            panelPause.Visible = true;
+            btnResume.Visible = false;
+            lblpaused.Visible = false;
+            lblgameover.Visible = false;
+            lblfinish.Visible = true;
+            if (level == 6)
             {
-                trophy.Image = Properties.Resources.bronze;
+                btnnext.Visible = false;
             }
-            // if player scored more than 2000 then give them a silver
-            if (Score > 2000)
+            else
             {
-                trophy.Image = Properties.Resources.silver;
+
+                btnnext.Visible = true;
             }
-            // if player scored more than 3500 then give them a gold trophy
-            if (Score > 3500)
+        }
+
+        private void btnnext_Click(object sender, EventArgs e)
+        {
+            switch (level)
             {
-                trophy.Image = Properties.Resources.gold;
+                case 1:
+                    {
+                        lvl.level2();
+                        Reset();
+                        break;
+                    }
+                case 2:
+                    {
+                        lvl.level3();
+                        Reset();
+                        break;
+                    }
+                case 3:
+                    {
+                        lvl.level4();
+                        Reset();
+                        break;
+                    }
+                case 4:
+                    {
+                        lvl.level5();
+                        Reset();
+                        break;
+                    }
+                case 5:
+                    {
+                        lvl.level6();
+                        Reset();
+                        break;
+                    }
+                default:
+                    break;
             }
         }
     }
