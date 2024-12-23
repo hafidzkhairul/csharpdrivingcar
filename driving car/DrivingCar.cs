@@ -1,5 +1,7 @@
 using System.Diagnostics;
 using System.Numerics;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 /**
  Info:
@@ -23,9 +25,11 @@ namespace driving_car
         int finish = 1000;
         bool carLeft;               //true = belok kiri
         bool carRight;              //true = belok kanan
+        //bool carUp;                 //true = keatas
+        //bool carDown;               //true = kebawah
         bool GameStarted = false;   //true = game dimulai
         bool GamePaused = false;    //true = game dipause
-        bool GameOver = false;    //true = game dipause
+        bool GameOver = false;
         Random rnd = new Random();
         Menu menu = new Menu();
         Level lvl = new Level();
@@ -34,6 +38,29 @@ namespace driving_car
         {
             InitializeComponent();
             Reset();
+            //random_map();
+        }
+
+        private void random_map()
+        {
+            int map = rnd.Next(1, 3);
+            switch (map)
+            {
+                case 1:
+                    road1.Image = Properties.Resources.road1;
+                    road2.Image = Properties.Resources.road1;
+                    break;
+                case 2:
+                    road1.Image = Properties.Resources.road2;
+                    road2.Image = Properties.Resources.road2;
+                    break;
+                case 3:
+                    road1.Image = Properties.Resources.road3;
+                    road2.Image = Properties.Resources.road3;
+                    break;
+                default:
+                    break;
+            }
         }
 
         //reset game
@@ -44,6 +71,7 @@ namespace driving_car
             roadSpeed = Level.roadSpeed; // set the road speed back to default
             level = Level.level;
             carSpeed = Level.carSpeed;
+            panelGame.Focus();
             menu.SelectCar(Menu.num_car, Player);
             lbllevel.Text = level.ToString();
             Score = 0; // reset score to 0
@@ -51,16 +79,18 @@ namespace driving_car
             Player.Top = 562; // reset player top
             carLeft = false; // reset the moving left to false
             carRight = false; // reset the moving right to false
+            //carUp = false; // reset the moving up to false
+            //carDown = false; // reset the moving down to false
             // pindah posisi AI ke luar screen
             AI1.Left = 66;
             AI1.Top = -120;
             AI2.Left = 294;
             AI2.Top = -185;
             //reset the road to their default position
-            road1.Left = 83;
-            road1.Top = -7;
-            road2.Left = 83;
-            road2.Top = -770;
+            road1.Left = -2;
+            road1.Top = 0;
+            road2.Left = -2;
+            road2.Top = -750;
             //Stop the game
             GameStarted = false;
             GamePaused = false;
@@ -133,17 +163,19 @@ namespace driving_car
             road1.Top += roadSpeed; // move the track 1 down with the += 
             road2.Top += roadSpeed; // move the track 2 down with the += 
             // if the track has gone past -580 then we set it back to default
-            if (road1.Top > 770)
+            if (road1.Top > 750)
             {
-                road1.Top = -770;
+                road1.Top = -750;
             }
-            if (road2.Top > 770)
+            if (road2.Top > 750)
             {
-                road2.Top = -770;
+                road2.Top = -750;
             }
 
             if (carLeft) { Player.Left -= carSpeed; } // move the car left if the car left is true
             if (carRight) { Player.Left += carSpeed; } // move the car right if the car right is true
+            //if (carUp) { Player.Top -= carSpeed; } // move the car up if the car right is true
+            //if (carDown) { Player.Top += carSpeed; } // move the car down if the car right is true
 
             //mencegah player bergerak keluar panel game
             if (Player.Left < 1)
@@ -154,6 +186,14 @@ namespace driving_car
             {
                 carRight = false;
             }
+            //else if (Player.Top < 19)
+            //{
+            //    carUp = false;
+            //}
+            //else if (Player.Top + Player.Height > 589)
+            //{
+            //    carDown = false;
+            //}
 
             //move the AI cars down
             AI1.Top += trafficSpeed;
@@ -181,7 +221,7 @@ namespace driving_car
 
         private void moveCar(object sender, KeyEventArgs e)
         {
-            if (!GameStarted && !GameOver)
+            if (!GameStarted && !GameOver && e.KeyCode == Keys.Enter)
             {
                 GameStarted = true;
                 lblStart.Visible = false;
@@ -195,6 +235,14 @@ namespace driving_car
             {
                 carRight = true;
             }
+            //if (e.KeyCode == Keys.Up && Player.Top > panelGame.Height)
+            //{
+            //    carUp = true;
+            //}
+            //if (e.KeyCode == Keys.Down && Player.Top + Player.Height < panelGame.Height)
+            //{
+            //    carDown = true;
+            //}
         }
 
         private void stopCar(object sender, KeyEventArgs e)
@@ -209,6 +257,16 @@ namespace driving_car
             {
                 carRight = false;
             }
+            // if the UP key is up we set the car right to false
+            //if (e.KeyCode == Keys.Up)
+            //{
+            //    carUp = false;
+            //}
+            //// if the DOWN key is up we set the car right to false
+            //if (e.KeyCode == Keys.Down)
+            //{
+            //    carDown = false;
+            //}
 
             //space for pause the game
             if (e.KeyCode == Keys.Space)
@@ -237,6 +295,30 @@ namespace driving_car
 
         }
 
+        private void unlockLevel()
+        {
+            if (level == 1)
+            {
+                Level.lvel2 = true;
+            }
+            else if (level == 2)
+            {
+                Level.lvel3 = true;
+            }
+            else if (level == 3)
+            {
+                Level.lvel4 = true;
+            }
+            else if (level == 4)
+            {
+                Level.lvel5 = true;
+            }
+            else if (level == 5)
+            {
+                Level.lvel6 = true;
+            }
+        }
+
         private void finished()
         {
             timer1.Stop();
@@ -245,6 +327,8 @@ namespace driving_car
             lblpaused.Visible = false;
             lblgameover.Visible = false;
             lblfinish.Visible = true;
+            unlockLevel();
+
             if (level == 6)
             {
                 btnnext.Visible = false;
@@ -264,35 +348,45 @@ namespace driving_car
                     {
                         lvl.level2();
                         Reset();
+                        random_map();
                         break;
                     }
                 case 2:
                     {
                         lvl.level3();
                         Reset();
+                        random_map();
                         break;
                     }
                 case 3:
                     {
                         lvl.level4();
                         Reset();
+                        random_map();
                         break;
                     }
                 case 4:
                     {
                         lvl.level5();
                         Reset();
+                        random_map();
                         break;
                     }
                 case 5:
                     {
                         lvl.level6();
                         Reset();
+                        random_map();
                         break;
                     }
                 default:
                     break;
             }
+        }
+
+        private void DrivingCar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

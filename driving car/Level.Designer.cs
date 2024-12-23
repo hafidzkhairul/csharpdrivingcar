@@ -133,7 +133,7 @@
             Controls.Add(lvl1);
             Controls.Add(label1);
             Name = "Level";
-            StartPosition = FormStartPosition.CenterParent;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Level";
             ResumeLayout(false);
             PerformLayout();

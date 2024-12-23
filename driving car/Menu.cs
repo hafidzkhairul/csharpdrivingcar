@@ -15,7 +15,6 @@ namespace driving_car
     {
         //global variable
         public static int num_car = 1;
-        Level level = new Level();
         public Menu()
         {
             InitializeComponent();
@@ -38,7 +37,8 @@ namespace driving_car
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            level.ShowDialog();
+            Level level = new Level();
+            level.Show();
             this.Hide();
         }
 
@@ -52,13 +52,13 @@ namespace driving_car
             switch (carId)
             {
                 case 1:
-                    Car.Image = Properties.Resources.carGreen;
+                    Car.Image = Properties.Resources.bluecar;
                     break;
                 case 2:
-                    Car.Image = Properties.Resources.carGrey;
+                    Car.Image = Properties.Resources.yellowcar;
                     break;
                 case 3:
-                    Car.Image = Properties.Resources.carOrange;
+                    Car.Image = Properties.Resources.yellowcar1;
                     break;
                 case 4:
                     Car.Image = Properties.Resources.carPink;

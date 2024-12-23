@@ -45,9 +45,9 @@
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(141, 29);
             label1.Name = "label1";
-            label1.Size = new Size(238, 45);
+            label1.Size = new Size(237, 45);
             label1.TabIndex = 0;
-            label1.Text = "ringroad recing";
+            label1.Text = "ringroad racing";
             // 
             // label2
             // 
@@ -61,7 +61,7 @@
             // 
             // selectedCar
             // 
-            selectedCar.Image = Properties.Resources.carGreen;
+            selectedCar.Image = Properties.Resources.yellowcar;
             selectedCar.Location = new Point(220, 147);
             selectedCar.Name = "selectedCar";
             selectedCar.Size = new Size(108, 202);
@@ -94,10 +94,10 @@
             // inputName
             // 
             inputName.Font = new Font("Arial Rounded MT Bold", 14F);
-            inputName.Location = new Point(189, 396);
+            inputName.Location = new Point(170, 393);
             inputName.Name = "inputName";
             inputName.PlaceholderText = "Your Name";
-            inputName.Size = new Size(165, 29);
+            inputName.Size = new Size(196, 29);
             inputName.TabIndex = 5;
             // 
             // btnStart

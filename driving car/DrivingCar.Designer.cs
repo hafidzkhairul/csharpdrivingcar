@@ -33,6 +33,16 @@
             label1 = new Label();
             lblStart = new Label();
             panelGame = new Panel();
+            lbllevel = new Label();
+            label2 = new Label();
+            progressBar = new ProgressBar();
+            btnpause = new PictureBox();
+            Player = new PictureBox();
+            explosion = new PictureBox();
+            AI2 = new PictureBox();
+            AI1 = new PictureBox();
+            road2 = new PictureBox();
+            road1 = new PictureBox();
             panelPause = new Panel();
             btnnext = new Button();
             lblfinish = new Label();
@@ -41,26 +51,16 @@
             btnmenu = new Button();
             btnResume = new Button();
             lblpaused = new Label();
-            progressBar = new ProgressBar();
-            btnpause = new PictureBox();
-            lbllevel = new Label();
-            label2 = new Label();
-            explosion = new PictureBox();
-            Player = new PictureBox();
-            AI2 = new PictureBox();
-            AI1 = new PictureBox();
-            road1 = new PictureBox();
-            road2 = new PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
             panelGame.SuspendLayout();
-            panelPause.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnpause).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)explosion).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Player).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)explosion).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AI2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AI1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)road1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)road2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)road1).BeginInit();
+            panelPause.SuspendLayout();
             SuspendLayout();
             // 
             // lblscore
@@ -96,32 +96,146 @@
             lblStart.Location = new Point(134, 696);
             lblStart.Name = "lblStart";
             lblStart.RightToLeft = RightToLeft.No;
-            lblStart.Size = new Size(227, 24);
+            lblStart.Size = new Size(216, 24);
             lblStart.TabIndex = 0;
-            lblStart.Text = "Press any key to Start";
+            lblStart.Text = "Press 'Enter' to Start";
             // 
             // panelGame
             // 
-            panelGame.BackColor = Color.Black;
+            panelGame.BackColor = SystemColors.ActiveCaptionText;
+            panelGame.BackgroundImage = Properties.Resources.road1;
+            panelGame.BackgroundImageLayout = ImageLayout.Stretch;
             panelGame.BorderStyle = BorderStyle.Fixed3D;
-            panelGame.Controls.Add(panelPause);
-            panelGame.Controls.Add(progressBar);
-            panelGame.Controls.Add(btnpause);
-            panelGame.Controls.Add(lbllevel);
-            panelGame.Controls.Add(label2);
+            panelGame.Controls.Add(lblStart);
             panelGame.Controls.Add(lblscore);
             panelGame.Controls.Add(label1);
-            panelGame.Controls.Add(lblStart);
-            panelGame.Controls.Add(explosion);
+            panelGame.Controls.Add(lbllevel);
+            panelGame.Controls.Add(label2);
+            panelGame.Controls.Add(progressBar);
+            panelGame.Controls.Add(btnpause);
             panelGame.Controls.Add(Player);
+            panelGame.Controls.Add(explosion);
             panelGame.Controls.Add(AI2);
             panelGame.Controls.Add(AI1);
-            panelGame.Controls.Add(road1);
             panelGame.Controls.Add(road2);
+            panelGame.Controls.Add(road1);
             panelGame.Location = new Point(12, 12);
             panelGame.Name = "panelGame";
             panelGame.Size = new Size(525, 751);
             panelGame.TabIndex = 2;
+            // 
+            // lbllevel
+            // 
+            lbllevel.AutoSize = true;
+            lbllevel.BackColor = Color.Transparent;
+            lbllevel.Font = new Font("Arial Rounded MT Bold", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbllevel.ForeColor = Color.White;
+            lbllevel.Location = new Point(3, 33);
+            lbllevel.Name = "lbllevel";
+            lbllevel.Size = new Size(30, 32);
+            lbllevel.TabIndex = 8;
+            lbllevel.Text = "1";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(3, 11);
+            label2.Name = "label2";
+            label2.Size = new Size(74, 22);
+            label2.TabIndex = 7;
+            label2.Text = "Level : ";
+            // 
+            // progressBar
+            // 
+            progressBar.BackColor = SystemColors.ControlLight;
+            progressBar.ForeColor = Color.GreenYellow;
+            progressBar.Location = new Point(119, 11);
+            progressBar.Name = "progressBar";
+            progressBar.Size = new Size(276, 10);
+            progressBar.Style = ProgressBarStyle.Continuous;
+            progressBar.TabIndex = 12;
+            // 
+            // btnpause
+            // 
+            btnpause.BackColor = Color.LightGray;
+            btnpause.ErrorImage = null;
+            btnpause.Location = new Point(429, 3);
+            btnpause.Name = "btnpause";
+            btnpause.Size = new Size(89, 50);
+            btnpause.TabIndex = 11;
+            btnpause.TabStop = false;
+            btnpause.Click += btnPause_Click;
+            // 
+            // Player
+            // 
+            Player.BackColor = Color.Transparent;
+            Player.Image = Properties.Resources.bluecar;
+            Player.Location = new Point(221, 472);
+            Player.Name = "Player";
+            Player.Size = new Size(69, 131);
+            Player.SizeMode = PictureBoxSizeMode.Zoom;
+            Player.TabIndex = 3;
+            Player.TabStop = false;
+            // 
+            // explosion
+            // 
+            explosion.BackColor = Color.Transparent;
+            explosion.BackgroundImageLayout = ImageLayout.None;
+            explosion.Image = Properties.Resources.explosion;
+            explosion.Location = new Point(221, 227);
+            explosion.Name = "explosion";
+            explosion.Size = new Size(80, 87);
+            explosion.SizeMode = PictureBoxSizeMode.StretchImage;
+            explosion.TabIndex = 4;
+            explosion.TabStop = false;
+            explosion.Visible = false;
+            // 
+            // AI2
+            // 
+            AI2.BackColor = Color.Transparent;
+            AI2.Image = Properties.Resources.ambulance;
+            AI2.Location = new Point(343, 279);
+            AI2.Name = "AI2";
+            AI2.Size = new Size(66, 131);
+            AI2.SizeMode = PictureBoxSizeMode.Zoom;
+            AI2.TabIndex = 2;
+            AI2.TabStop = false;
+            // 
+            // AI1
+            // 
+            AI1.BackColor = Color.Transparent;
+            AI1.Image = Properties.Resources.carGrey;
+            AI1.Location = new Point(94, 296);
+            AI1.Name = "AI1";
+            AI1.Size = new Size(63, 126);
+            AI1.SizeMode = PictureBoxSizeMode.Zoom;
+            AI1.TabIndex = 0;
+            AI1.TabStop = false;
+            // 
+            // road2
+            // 
+            road2.BackColor = Color.Transparent;
+            road2.Image = Properties.Resources.road1;
+            road2.Location = new Point(-2, -750);
+            road2.Name = "road2";
+            road2.Size = new Size(525, 783);
+            road2.SizeMode = PictureBoxSizeMode.StretchImage;
+            road2.TabIndex = 13;
+            road2.TabStop = false;
+            // 
+            // road1
+            // 
+            road1.BackColor = Color.Transparent;
+            road1.Image = Properties.Resources.road1;
+            road1.Location = new Point(-2, -2);
+            road1.Name = "road1";
+            road1.Size = new Size(525, 783);
+            road1.SizeMode = PictureBoxSizeMode.StretchImage;
+            road1.TabIndex = 0;
+            road1.TabStop = false;
             // 
             // panelPause
             // 
@@ -133,7 +247,7 @@
             panelPause.Controls.Add(btnmenu);
             panelPause.Controls.Add(btnResume);
             panelPause.Controls.Add(lblpaused);
-            panelPause.Location = new Point(67, 88);
+            panelPause.Location = new Point(724, 79);
             panelPause.Name = "panelPause";
             panelPause.Size = new Size(389, 505);
             panelPause.TabIndex = 3;
@@ -212,116 +326,6 @@
             lblpaused.TabIndex = 0;
             lblpaused.Text = "Paused";
             // 
-            // progressBar
-            // 
-            progressBar.BackColor = SystemColors.ControlLight;
-            progressBar.ForeColor = Color.GreenYellow;
-            progressBar.Location = new Point(119, 11);
-            progressBar.Name = "progressBar";
-            progressBar.Size = new Size(276, 10);
-            progressBar.Style = ProgressBarStyle.Continuous;
-            progressBar.TabIndex = 12;
-            // 
-            // btnpause
-            // 
-            btnpause.BackColor = Color.LightGray;
-            btnpause.ErrorImage = null;
-            btnpause.Location = new Point(429, 3);
-            btnpause.Name = "btnpause";
-            btnpause.Size = new Size(89, 50);
-            btnpause.TabIndex = 11;
-            btnpause.TabStop = false;
-            btnpause.Click += btnPause_Click;
-            // 
-            // lbllevel
-            // 
-            lbllevel.AutoSize = true;
-            lbllevel.BackColor = Color.Transparent;
-            lbllevel.Font = new Font("Arial Rounded MT Bold", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbllevel.ForeColor = Color.White;
-            lbllevel.Location = new Point(3, 33);
-            lbllevel.Name = "lbllevel";
-            lbllevel.Size = new Size(30, 32);
-            lbllevel.TabIndex = 8;
-            lbllevel.Text = "1";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(3, 11);
-            label2.Name = "label2";
-            label2.Size = new Size(74, 22);
-            label2.TabIndex = 7;
-            label2.Text = "Level : ";
-            // 
-            // explosion
-            // 
-            explosion.BackColor = Color.Transparent;
-            explosion.Image = Properties.Resources.explosion;
-            explosion.Location = new Point(290, 357);
-            explosion.Name = "explosion";
-            explosion.Size = new Size(80, 87);
-            explosion.SizeMode = PictureBoxSizeMode.StretchImage;
-            explosion.TabIndex = 4;
-            explosion.TabStop = false;
-            explosion.Visible = false;
-            // 
-            // Player
-            // 
-            Player.BackColor = Color.Transparent;
-            Player.Image = Properties.Resources.CarRed;
-            Player.Location = new Point(224, 562);
-            Player.Name = "Player";
-            Player.Size = new Size(79, 131);
-            Player.SizeMode = PictureBoxSizeMode.StretchImage;
-            Player.TabIndex = 3;
-            Player.TabStop = false;
-            // 
-            // AI2
-            // 
-            AI2.BackColor = Color.Transparent;
-            AI2.Image = Properties.Resources.carPink;
-            AI2.Location = new Point(441, 278);
-            AI2.Name = "AI2";
-            AI2.Size = new Size(77, 131);
-            AI2.SizeMode = PictureBoxSizeMode.StretchImage;
-            AI2.TabIndex = 2;
-            AI2.TabStop = false;
-            // 
-            // AI1
-            // 
-            AI1.BackColor = Color.Transparent;
-            AI1.Image = Properties.Resources.carGrey;
-            AI1.Location = new Point(6, 163);
-            AI1.Name = "AI1";
-            AI1.Size = new Size(77, 131);
-            AI1.SizeMode = PictureBoxSizeMode.StretchImage;
-            AI1.TabIndex = 0;
-            AI1.TabStop = false;
-            // 
-            // road1
-            // 
-            road1.Image = Properties.Resources.roadTrack;
-            road1.Location = new Point(83, -7);
-            road1.Name = "road1";
-            road1.Size = new Size(345, 751);
-            road1.SizeMode = PictureBoxSizeMode.StretchImage;
-            road1.TabIndex = 0;
-            road1.TabStop = false;
-            // 
-            // road2
-            // 
-            road2.Image = Properties.Resources.roadTrack;
-            road2.Location = new Point(83, -770);
-            road2.Name = "road2";
-            road2.Size = new Size(345, 751);
-            road2.SizeMode = PictureBoxSizeMode.StretchImage;
-            road2.TabIndex = 10;
-            road2.TabStop = false;
-            // 
             // timer1
             // 
             timer1.Enabled = true;
@@ -333,25 +337,27 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(544, 841);
+            ClientSize = new Size(1221, 841);
+            Controls.Add(panelPause);
             Controls.Add(panelGame);
             KeyPreview = true;
             Name = "DrivingCar";
-            StartPosition = FormStartPosition.CenterParent;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Driving car";
+            Load += DrivingCar_Load;
             KeyDown += moveCar;
             KeyUp += stopCar;
             panelGame.ResumeLayout(false);
             panelGame.PerformLayout();
-            panelPause.ResumeLayout(false);
-            panelPause.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnpause).EndInit();
-            ((System.ComponentModel.ISupportInitialize)explosion).EndInit();
             ((System.ComponentModel.ISupportInitialize)Player).EndInit();
+            ((System.ComponentModel.ISupportInitialize)explosion).EndInit();
             ((System.ComponentModel.ISupportInitialize)AI2).EndInit();
             ((System.ComponentModel.ISupportInitialize)AI1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)road1).EndInit();
             ((System.ComponentModel.ISupportInitialize)road2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)road1).EndInit();
+            panelPause.ResumeLayout(false);
+            panelPause.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -367,7 +373,6 @@
         private Label label1;
         private Label lbllevel;
         private Label label2;
-        private PictureBox road2;
         private PictureBox btnpause;
         private Panel panelPause;
         private Button btnResume;
@@ -379,5 +384,6 @@
         private ProgressBar progressBar;
         private Button btnnext;
         private Label lblfinish;
+        private PictureBox road2;
     }
 }
