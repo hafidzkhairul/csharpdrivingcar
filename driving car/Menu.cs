@@ -24,14 +24,14 @@ namespace driving_car
         private void slcright_Click(object sender, EventArgs e)
         {
             num_car++;
-            num_car = num_car == 9 ? 1 : num_car;
+            num_car = num_car == 11 ? 1 : num_car;
             SelectCar(num_car, selectedCar);
         }
 
         private void slcleft_Click(object sender, EventArgs e)
         {
             num_car--;
-            num_car = num_car == 0 ? 8 : num_car;
+            num_car = num_car == 0 ? 10 : num_car;
             SelectCar(num_car, selectedCar);
         }
 
@@ -52,28 +52,34 @@ namespace driving_car
             switch (carId)
             {
                 case 1:
-                    Car.Image = Properties.Resources.bluecar;
+                    Car.Image = Properties.Resources.car1;
                     break;
                 case 2:
-                    Car.Image = Properties.Resources.yellowcar;
+                    Car.Image = Properties.Resources.car2;
                     break;
                 case 3:
-                    Car.Image = Properties.Resources.yellowcar1;
+                    Car.Image = Properties.Resources.car3;
                     break;
                 case 4:
-                    Car.Image = Properties.Resources.carPink;
+                    Car.Image = Properties.Resources.car4;
                     break;
                 case 5:
-                    Car.Image = Properties.Resources.CarRed;
+                    Car.Image = Properties.Resources.car5;
                     break;
                 case 6:
-                    Car.Image = Properties.Resources.TruckBlue;
+                    Car.Image = Properties.Resources.car6;
                     break;
                 case 7:
-                    Car.Image = Properties.Resources.TruckWhite;
+                    Car.Image = Properties.Resources.car7;
                     break;
                 case 8:
-                    Car.Image = Properties.Resources.ambulance;
+                    Car.Image = Properties.Resources.car8;
+                    break;
+                case 9:
+                    Car.Image = Properties.Resources.car9;
+                    break;
+                case 10:
+                    Car.Image = Properties.Resources.car10;
                     break;
                 default:
                     break;

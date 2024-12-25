@@ -201,13 +201,13 @@ namespace driving_car
             //respawn the AIs and change the their images
             if (AI1.Top > panelGame.Height)
             {
-                menu.SelectCar(rnd.Next(1, 8), AI1); // change the AI car images once they left the scene
+                menu.SelectCar(rnd.Next(1, 10), AI1); // change the AI car images once they left the scene
                 AI1.Left = rnd.Next(2, 180); // random posisi left
                 AI1.Top = rnd.Next(100, 200) * -1; // random posisi top
             }
             if (AI2.Top > panelGame.Height)
             {
-                menu.SelectCar(rnd.Next(1, 8), AI2); // change the AI car images once they left the scene
+                menu.SelectCar(rnd.Next(1, 10), AI2); // change the AI car images once they left the scene
                 AI2.Left = rnd.Next(240, 440); // random numbers where they appear on the left
                 AI2.Top = rnd.Next(100, 200) * -1; // random numbers where they appear on top
             }
@@ -221,7 +221,7 @@ namespace driving_car
 
         private void moveCar(object sender, KeyEventArgs e)
         {
-            if (!GameStarted && !GameOver && e.KeyCode == Keys.Enter)
+            if (!GameStarted && !GameOver && (e.KeyCode == Keys.Left || e.KeyCode == Keys.Right))
             {
                 GameStarted = true;
                 lblStart.Visible = false;

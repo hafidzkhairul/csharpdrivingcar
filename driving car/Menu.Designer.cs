@@ -61,7 +61,7 @@
             // 
             // selectedCar
             // 
-            selectedCar.Image = Properties.Resources.yellowcar;
+            selectedCar.Image = Properties.Resources.car1;
             selectedCar.Location = new Point(220, 147);
             selectedCar.Name = "selectedCar";
             selectedCar.Size = new Size(108, 202);

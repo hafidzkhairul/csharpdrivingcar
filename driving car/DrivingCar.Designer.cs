@@ -96,9 +96,9 @@
             lblStart.Location = new Point(134, 696);
             lblStart.Name = "lblStart";
             lblStart.RightToLeft = RightToLeft.No;
-            lblStart.Size = new Size(216, 24);
+            lblStart.Size = new Size(258, 24);
             lblStart.TabIndex = 0;
-            lblStart.Text = "Press 'Enter' to Start";
+            lblStart.Text = "Press Arrow Key to Start";
             // 
             // panelGame
             // 
@@ -172,11 +172,11 @@
             // Player
             // 
             Player.BackColor = Color.Transparent;
-            Player.Image = Properties.Resources.bluecar;
-            Player.Location = new Point(221, 472);
+            Player.Image = Properties.Resources.car5;
+            Player.Location = new Point(232, 546);
             Player.Name = "Player";
             Player.Size = new Size(69, 131);
-            Player.SizeMode = PictureBoxSizeMode.Zoom;
+            Player.SizeMode = PictureBoxSizeMode.StretchImage;
             Player.TabIndex = 3;
             Player.TabStop = false;
             // 
@@ -196,7 +196,7 @@
             // AI2
             // 
             AI2.BackColor = Color.Transparent;
-            AI2.Image = Properties.Resources.ambulance;
+            AI2.Image = Properties.Resources.car10;
             AI2.Location = new Point(343, 279);
             AI2.Name = "AI2";
             AI2.Size = new Size(66, 131);
@@ -207,7 +207,7 @@
             // AI1
             // 
             AI1.BackColor = Color.Transparent;
-            AI1.Image = Properties.Resources.carGrey;
+            AI1.Image = Properties.Resources.car3;
             AI1.Location = new Point(94, 296);
             AI1.Name = "AI1";
             AI1.Size = new Size(63, 126);
