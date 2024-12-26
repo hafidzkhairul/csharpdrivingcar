@@ -35,7 +35,8 @@
             lvl4 = new Button();
             lvl3 = new Button();
             lvl2 = new Button();
-            backtomenu = new Button();
+            backtomenu = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)backtomenu).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -110,12 +111,13 @@
             // 
             // backtomenu
             // 
-            backtomenu.Location = new Point(409, 21);
+            backtomenu.Image = Properties.Resources.btn_exit;
+            backtomenu.Location = new Point(401, 12);
             backtomenu.Name = "backtomenu";
-            backtomenu.Size = new Size(89, 47);
-            backtomenu.TabIndex = 7;
-            backtomenu.Text = "menu";
-            backtomenu.UseVisualStyleBackColor = true;
+            backtomenu.Size = new Size(131, 51);
+            backtomenu.SizeMode = PictureBoxSizeMode.Zoom;
+            backtomenu.TabIndex = 12;
+            backtomenu.TabStop = false;
             backtomenu.Click += backtomenu_Click;
             // 
             // Level
@@ -135,6 +137,7 @@
             Name = "Level";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Level";
+            ((System.ComponentModel.ISupportInitialize)backtomenu).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -148,6 +151,6 @@
         private Button lvl4;
         private Button lvl3;
         private Button lvl2;
-        private Button backtomenu;
+        private PictureBox backtomenu;
     }
 }

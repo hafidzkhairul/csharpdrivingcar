@@ -38,7 +38,7 @@ namespace driving_car
         {
             InitializeComponent();
             Reset();
-            //random_map();
+            random_map();
         }
 
         private void random_map()
@@ -49,14 +49,17 @@ namespace driving_car
                 case 1:
                     road1.Image = Properties.Resources.road1;
                     road2.Image = Properties.Resources.road1;
+                    panelGame.BackgroundImage = Properties.Resources.road1;
                     break;
                 case 2:
                     road1.Image = Properties.Resources.road2;
                     road2.Image = Properties.Resources.road2;
+                    panelGame.BackgroundImage = Properties.Resources.road2;
                     break;
                 case 3:
                     road1.Image = Properties.Resources.road3;
                     road2.Image = Properties.Resources.road3;
+                    panelGame.BackgroundImage = Properties.Resources.road3;
                     break;
                 default:
                     break;
@@ -133,7 +136,7 @@ namespace driving_car
                     lblgameover.Visible = false;
                     lblpaused.Visible = true;
                     lblfinish.Visible = false;
-                    btnResume.Visible = true;
+                    buttonresume.Visible = true;
                     btnnext.Visible = false;
                     GamePaused = true;
                     timer1.Stop();              //stop game
@@ -280,7 +283,7 @@ namespace driving_car
             GameStarted = false;
             timer1.Stop(); // stop the timer
             panelPause.Visible = true;
-            btnResume.Visible = false;
+            buttonresume.Visible = false;
             btnnext.Visible = false;
             lblfinish.Visible = false;
             lblpaused.Visible = false;
@@ -323,7 +326,7 @@ namespace driving_car
         {
             timer1.Stop();
             panelPause.Visible = true;
-            btnResume.Visible = false;
+            buttonresume.Visible = false;
             lblpaused.Visible = false;
             lblgameover.Visible = false;
             lblfinish.Visible = true;

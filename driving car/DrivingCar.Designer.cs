@@ -33,6 +33,14 @@
             label1 = new Label();
             lblStart = new Label();
             panelGame = new Panel();
+            panelPause = new Panel();
+            buttonrestart = new PictureBox();
+            buttonmenu = new PictureBox();
+            buttonresume = new PictureBox();
+            btnnext = new PictureBox();
+            lblfinish = new Label();
+            lblgameover = new Label();
+            lblpaused = new Label();
             lbllevel = new Label();
             label2 = new Label();
             progressBar = new ProgressBar();
@@ -43,16 +51,13 @@
             AI1 = new PictureBox();
             road2 = new PictureBox();
             road1 = new PictureBox();
-            panelPause = new Panel();
-            btnnext = new Button();
-            lblfinish = new Label();
-            lblgameover = new Label();
-            btnrestart = new Button();
-            btnmenu = new Button();
-            btnResume = new Button();
-            lblpaused = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             panelGame.SuspendLayout();
+            panelPause.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)buttonrestart).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)buttonmenu).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)buttonresume).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnnext).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnpause).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Player).BeginInit();
             ((System.ComponentModel.ISupportInitialize)explosion).BeginInit();
@@ -60,7 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)AI1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)road2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)road1).BeginInit();
-            panelPause.SuspendLayout();
             SuspendLayout();
             // 
             // lblscore
@@ -106,6 +110,7 @@
             panelGame.BackgroundImage = Properties.Resources.road1;
             panelGame.BackgroundImageLayout = ImageLayout.Stretch;
             panelGame.BorderStyle = BorderStyle.Fixed3D;
+            panelGame.Controls.Add(panelPause);
             panelGame.Controls.Add(lblStart);
             panelGame.Controls.Add(lblscore);
             panelGame.Controls.Add(label1);
@@ -123,6 +128,99 @@
             panelGame.Name = "panelGame";
             panelGame.Size = new Size(525, 751);
             panelGame.TabIndex = 2;
+            // 
+            // panelPause
+            // 
+            panelPause.BackColor = Color.FromArgb(64, 64, 64);
+            panelPause.Controls.Add(buttonrestart);
+            panelPause.Controls.Add(buttonmenu);
+            panelPause.Controls.Add(buttonresume);
+            panelPause.Controls.Add(btnnext);
+            panelPause.Controls.Add(lblfinish);
+            panelPause.Controls.Add(lblgameover);
+            panelPause.Controls.Add(lblpaused);
+            panelPause.Location = new Point(57, 65);
+            panelPause.Name = "panelPause";
+            panelPause.Size = new Size(389, 505);
+            panelPause.TabIndex = 3;
+            panelPause.Visible = false;
+            // 
+            // buttonrestart
+            // 
+            buttonrestart.Image = Properties.Resources.btn_star;
+            buttonrestart.Location = new Point(130, 272);
+            buttonrestart.Name = "buttonrestart";
+            buttonrestart.Size = new Size(150, 51);
+            buttonrestart.SizeMode = PictureBoxSizeMode.Zoom;
+            buttonrestart.TabIndex = 19;
+            buttonrestart.TabStop = false;
+            buttonrestart.Click += btnrestart_Click;
+            // 
+            // buttonmenu
+            // 
+            buttonmenu.Image = Properties.Resources.btn_exit;
+            buttonmenu.Location = new Point(130, 340);
+            buttonmenu.Name = "buttonmenu";
+            buttonmenu.Size = new Size(150, 51);
+            buttonmenu.SizeMode = PictureBoxSizeMode.Zoom;
+            buttonmenu.TabIndex = 18;
+            buttonmenu.TabStop = false;
+            buttonmenu.Click += btnmenu_Click;
+            // 
+            // buttonresume
+            // 
+            buttonresume.Image = Properties.Resources.btn_resume;
+            buttonresume.Location = new Point(130, 198);
+            buttonresume.Name = "buttonresume";
+            buttonresume.Size = new Size(150, 51);
+            buttonresume.SizeMode = PictureBoxSizeMode.Zoom;
+            buttonresume.TabIndex = 17;
+            buttonresume.TabStop = false;
+            buttonresume.Click += btnResume_Click;
+            // 
+            // btnnext
+            // 
+            btnnext.Image = Properties.Resources.btn_next;
+            btnnext.Location = new Point(130, 198);
+            btnnext.Name = "btnnext";
+            btnnext.Size = new Size(150, 51);
+            btnnext.SizeMode = PictureBoxSizeMode.Zoom;
+            btnnext.TabIndex = 13;
+            btnnext.TabStop = false;
+            btnnext.Click += btnnext_Click;
+            // 
+            // lblfinish
+            // 
+            lblfinish.AutoSize = true;
+            lblfinish.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblfinish.ForeColor = SystemColors.Control;
+            lblfinish.Location = new Point(151, 117);
+            lblfinish.Name = "lblfinish";
+            lblfinish.Size = new Size(98, 32);
+            lblfinish.TabIndex = 5;
+            lblfinish.Text = "you win";
+            // 
+            // lblgameover
+            // 
+            lblgameover.AutoSize = true;
+            lblgameover.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblgameover.ForeColor = SystemColors.Control;
+            lblgameover.Location = new Point(143, 85);
+            lblgameover.Name = "lblgameover";
+            lblgameover.Size = new Size(128, 32);
+            lblgameover.TabIndex = 4;
+            lblgameover.Text = "game over";
+            // 
+            // lblpaused
+            // 
+            lblpaused.AutoSize = true;
+            lblpaused.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblpaused.ForeColor = SystemColors.Control;
+            lblpaused.Location = new Point(160, 53);
+            lblpaused.Name = "lblpaused";
+            lblpaused.Size = new Size(89, 32);
+            lblpaused.TabIndex = 0;
+            lblpaused.Text = "Paused";
             // 
             // lbllevel
             // 
@@ -160,11 +258,13 @@
             // 
             // btnpause
             // 
-            btnpause.BackColor = Color.LightGray;
+            btnpause.BackColor = Color.Transparent;
             btnpause.ErrorImage = null;
-            btnpause.Location = new Point(429, 3);
+            btnpause.Image = Properties.Resources.btn_pause;
+            btnpause.Location = new Point(452, 3);
             btnpause.Name = "btnpause";
-            btnpause.Size = new Size(89, 50);
+            btnpause.Size = new Size(66, 62);
+            btnpause.SizeMode = PictureBoxSizeMode.Zoom;
             btnpause.TabIndex = 11;
             btnpause.TabStop = false;
             btnpause.Click += btnPause_Click;
@@ -237,95 +337,6 @@
             road1.TabIndex = 0;
             road1.TabStop = false;
             // 
-            // panelPause
-            // 
-            panelPause.BackColor = Color.FromArgb(64, 64, 64);
-            panelPause.Controls.Add(btnnext);
-            panelPause.Controls.Add(lblfinish);
-            panelPause.Controls.Add(lblgameover);
-            panelPause.Controls.Add(btnrestart);
-            panelPause.Controls.Add(btnmenu);
-            panelPause.Controls.Add(btnResume);
-            panelPause.Controls.Add(lblpaused);
-            panelPause.Location = new Point(724, 79);
-            panelPause.Name = "panelPause";
-            panelPause.Size = new Size(389, 505);
-            panelPause.TabIndex = 3;
-            panelPause.Visible = false;
-            // 
-            // btnnext
-            // 
-            btnnext.Location = new Point(160, 226);
-            btnnext.Name = "btnnext";
-            btnnext.Size = new Size(75, 23);
-            btnnext.TabIndex = 6;
-            btnnext.Text = "Next";
-            btnnext.UseVisualStyleBackColor = true;
-            btnnext.Click += btnnext_Click;
-            // 
-            // lblfinish
-            // 
-            lblfinish.AutoSize = true;
-            lblfinish.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblfinish.ForeColor = SystemColors.Control;
-            lblfinish.Location = new Point(151, 128);
-            lblfinish.Name = "lblfinish";
-            lblfinish.Size = new Size(98, 32);
-            lblfinish.TabIndex = 5;
-            lblfinish.Text = "you win";
-            // 
-            // lblgameover
-            // 
-            lblgameover.AutoSize = true;
-            lblgameover.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblgameover.ForeColor = SystemColors.Control;
-            lblgameover.Location = new Point(143, 85);
-            lblgameover.Name = "lblgameover";
-            lblgameover.Size = new Size(128, 32);
-            lblgameover.TabIndex = 4;
-            lblgameover.Text = "game over";
-            // 
-            // btnrestart
-            // 
-            btnrestart.Location = new Point(160, 311);
-            btnrestart.Name = "btnrestart";
-            btnrestart.Size = new Size(75, 23);
-            btnrestart.TabIndex = 3;
-            btnrestart.Text = "Restart";
-            btnrestart.UseVisualStyleBackColor = true;
-            btnrestart.Click += btnrestart_Click;
-            // 
-            // btnmenu
-            // 
-            btnmenu.Location = new Point(160, 356);
-            btnmenu.Name = "btnmenu";
-            btnmenu.Size = new Size(75, 23);
-            btnmenu.TabIndex = 2;
-            btnmenu.Text = "Menu";
-            btnmenu.UseVisualStyleBackColor = true;
-            btnmenu.Click += btnmenu_Click;
-            // 
-            // btnResume
-            // 
-            btnResume.Location = new Point(160, 269);
-            btnResume.Name = "btnResume";
-            btnResume.Size = new Size(75, 23);
-            btnResume.TabIndex = 1;
-            btnResume.Text = "Resume";
-            btnResume.UseVisualStyleBackColor = true;
-            btnResume.Click += btnResume_Click;
-            // 
-            // lblpaused
-            // 
-            lblpaused.AutoSize = true;
-            lblpaused.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblpaused.ForeColor = SystemColors.Control;
-            lblpaused.Location = new Point(160, 30);
-            lblpaused.Name = "lblpaused";
-            lblpaused.Size = new Size(89, 32);
-            lblpaused.TabIndex = 0;
-            lblpaused.Text = "Paused";
-            // 
             // timer1
             // 
             timer1.Enabled = true;
@@ -337,8 +348,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(1221, 841);
-            Controls.Add(panelPause);
+            ClientSize = new Size(551, 841);
             Controls.Add(panelGame);
             KeyPreview = true;
             Name = "DrivingCar";
@@ -349,6 +359,12 @@
             KeyUp += stopCar;
             panelGame.ResumeLayout(false);
             panelGame.PerformLayout();
+            panelPause.ResumeLayout(false);
+            panelPause.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)buttonrestart).EndInit();
+            ((System.ComponentModel.ISupportInitialize)buttonmenu).EndInit();
+            ((System.ComponentModel.ISupportInitialize)buttonresume).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnnext).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnpause).EndInit();
             ((System.ComponentModel.ISupportInitialize)Player).EndInit();
             ((System.ComponentModel.ISupportInitialize)explosion).EndInit();
@@ -356,8 +372,6 @@
             ((System.ComponentModel.ISupportInitialize)AI1).EndInit();
             ((System.ComponentModel.ISupportInitialize)road2).EndInit();
             ((System.ComponentModel.ISupportInitialize)road1).EndInit();
-            panelPause.ResumeLayout(false);
-            panelPause.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -375,15 +389,15 @@
         private Label label2;
         private PictureBox btnpause;
         private Panel panelPause;
-        private Button btnResume;
         private Label lblpaused;
-        private Button btnmenu;
         public PictureBox Player;
-        private Button btnrestart;
         private Label lblgameover;
         private ProgressBar progressBar;
-        private Button btnnext;
         private Label lblfinish;
         private PictureBox road2;
+        private PictureBox btnnext;
+        private PictureBox buttonresume;
+        private PictureBox buttonmenu;
+        private PictureBox buttonrestart;
     }
 }
