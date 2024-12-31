@@ -63,9 +63,9 @@ namespace driving_car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap btn_exit {
+        internal static System.Drawing.Bitmap _1 {
             get {
-                object obj = ResourceManager.GetObject("btn_exit", resourceCulture);
+                object obj = ResourceManager.GetObject("1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,119 @@ namespace driving_car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap btn_left2 {
+        internal static System.Drawing.Bitmap _2 {
             get {
-                object obj = ResourceManager.GetObject("btn_left2", resourceCulture);
+                object obj = ResourceManager.GetObject("2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2_kunci {
+            get {
+                object obj = ResourceManager.GetObject("2.kunci", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3 {
+            get {
+                object obj = ResourceManager.GetObject("3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3_kunci {
+            get {
+                object obj = ResourceManager.GetObject("3.kunci", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4 {
+            get {
+                object obj = ResourceManager.GetObject("4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4_kunci {
+            get {
+                object obj = ResourceManager.GetObject("4.kunci", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _5 {
+            get {
+                object obj = ResourceManager.GetObject("5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _5_kunci {
+            get {
+                object obj = ResourceManager.GetObject("5.kunci", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _6 {
+            get {
+                object obj = ResourceManager.GetObject("6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _6_kunci {
+            get {
+                object obj = ResourceManager.GetObject("6.kunci", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btn_exit1 {
+            get {
+                object obj = ResourceManager.GetObject("btn_exit1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btn_left21 {
+            get {
+                object obj = ResourceManager.GetObject("btn_left21", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +203,9 @@ namespace driving_car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap btn_pause {
+        internal static System.Drawing.Bitmap btn_pause1 {
             get {
-                object obj = ResourceManager.GetObject("btn_pause", resourceCulture);
+                object obj = ResourceManager.GetObject("btn_pause1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +213,9 @@ namespace driving_car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap btn_resume {
+        internal static System.Drawing.Bitmap btn_resume1 {
             get {
-                object obj = ResourceManager.GetObject("btn_resume", resourceCulture);
+                object obj = ResourceManager.GetObject("btn_resume1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +223,9 @@ namespace driving_car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap btn_right {
+        internal static System.Drawing.Bitmap btn_right1 {
             get {
-                object obj = ResourceManager.GetObject("btn_right", resourceCulture);
+                object obj = ResourceManager.GetObject("btn_right1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +233,9 @@ namespace driving_car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap btn_setting {
+        internal static System.Drawing.Bitmap btn_start1 {
             get {
-                object obj = ResourceManager.GetObject("btn_setting", resourceCulture);
+                object obj = ResourceManager.GetObject("btn_start1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +243,9 @@ namespace driving_car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap btn_star {
+        internal static System.Drawing.Bitmap car101 {
             get {
-                object obj = ResourceManager.GetObject("btn_star", resourceCulture);
+                object obj = ResourceManager.GetObject("car101", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +253,9 @@ namespace driving_car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap car1 {
+        internal static System.Drawing.Bitmap car11 {
             get {
-                object obj = ResourceManager.GetObject("car1", resourceCulture);
+                object obj = ResourceManager.GetObject("car11", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +263,9 @@ namespace driving_car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap car10 {
+        internal static System.Drawing.Bitmap car21 {
             get {
-                object obj = ResourceManager.GetObject("car10", resourceCulture);
+                object obj = ResourceManager.GetObject("car21", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +273,9 @@ namespace driving_car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap car2 {
+        internal static System.Drawing.Bitmap car31 {
             get {
-                object obj = ResourceManager.GetObject("car2", resourceCulture);
+                object obj = ResourceManager.GetObject("car31", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +283,9 @@ namespace driving_car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap car3 {
+        internal static System.Drawing.Bitmap car41 {
             get {
-                object obj = ResourceManager.GetObject("car3", resourceCulture);
+                object obj = ResourceManager.GetObject("car41", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +293,9 @@ namespace driving_car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap car4 {
+        internal static System.Drawing.Bitmap car51 {
             get {
-                object obj = ResourceManager.GetObject("car4", resourceCulture);
+                object obj = ResourceManager.GetObject("car51", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +303,9 @@ namespace driving_car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap car5 {
+        internal static System.Drawing.Bitmap car61 {
             get {
-                object obj = ResourceManager.GetObject("car5", resourceCulture);
+                object obj = ResourceManager.GetObject("car61", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +313,9 @@ namespace driving_car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap car6 {
+        internal static System.Drawing.Bitmap car71 {
             get {
-                object obj = ResourceManager.GetObject("car6", resourceCulture);
+                object obj = ResourceManager.GetObject("car71", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +323,9 @@ namespace driving_car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap car7 {
+        internal static System.Drawing.Bitmap car81 {
             get {
-                object obj = ResourceManager.GetObject("car7", resourceCulture);
+                object obj = ResourceManager.GetObject("car81", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,19 +333,9 @@ namespace driving_car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap car8 {
+        internal static System.Drawing.Bitmap car91 {
             get {
-                object obj = ResourceManager.GetObject("car8", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap car9 {
-            get {
-                object obj = ResourceManager.GetObject("car9", resourceCulture);
+                object obj = ResourceManager.GetObject("car91", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -246,6 +346,96 @@ namespace driving_car.Properties {
         internal static System.Drawing.Bitmap explosion {
             get {
                 object obj = ResourceManager.GetObject("explosion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap game_over {
+            get {
+                object obj = ResourceManager.GetObject("game over", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gembok_trans {
+            get {
+                object obj = ResourceManager.GetObject("gembok trans", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap level {
+            get {
+                object obj = ResourceManager.GetObject("level", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap levels1 {
+            get {
+                object obj = ResourceManager.GetObject("levels1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap levels2 {
+            get {
+                object obj = ResourceManager.GetObject("levels2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap levels3 {
+            get {
+                object obj = ResourceManager.GetObject("levels3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap levels4 {
+            get {
+                object obj = ResourceManager.GetObject("levels4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap levels5 {
+            get {
+                object obj = ResourceManager.GetObject("levels5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap levels6 {
+            get {
+                object obj = ResourceManager.GetObject("levels6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -276,6 +466,26 @@ namespace driving_car.Properties {
         internal static System.Drawing.Bitmap road3 {
             get {
                 object obj = ResourceManager.GetObject("road3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap roadTrack {
+            get {
+                object obj = ResourceManager.GetObject("roadTrack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap victory_Photoroom {
+            get {
+                object obj = ResourceManager.GetObject("victory-Photoroom", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

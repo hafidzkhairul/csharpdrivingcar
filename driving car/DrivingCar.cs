@@ -38,33 +38,8 @@ namespace driving_car
         {
             InitializeComponent();
             Reset();
-            random_map();
         }
 
-        private void random_map()
-        {
-            int map = rnd.Next(1, 3);
-            switch (map)
-            {
-                case 1:
-                    road1.Image = Properties.Resources.road1;
-                    road2.Image = Properties.Resources.road1;
-                    panelGame.BackgroundImage = Properties.Resources.road1;
-                    break;
-                case 2:
-                    road1.Image = Properties.Resources.road2;
-                    road2.Image = Properties.Resources.road2;
-                    panelGame.BackgroundImage = Properties.Resources.road2;
-                    break;
-                case 3:
-                    road1.Image = Properties.Resources.road3;
-                    road2.Image = Properties.Resources.road3;
-                    panelGame.BackgroundImage = Properties.Resources.road3;
-                    break;
-                default:
-                    break;
-            }
-        }
 
         //reset game
         private void Reset()
@@ -133,9 +108,9 @@ namespace driving_car
                 if (!GamePaused)    //pause game
                 {
                     panelPause.Visible = true;   //show label pause
-                    lblgameover.Visible = false;
+                    overgame.Visible = false;
                     lblpaused.Visible = true;
-                    lblfinish.Visible = false;
+                    victory.Visible = false;
                     buttonresume.Visible = true;
                     btnnext.Visible = false;
                     GamePaused = true;
@@ -285,9 +260,9 @@ namespace driving_car
             panelPause.Visible = true;
             buttonresume.Visible = false;
             btnnext.Visible = false;
-            lblfinish.Visible = false;
+            victory.Visible = false;
             lblpaused.Visible = false;
-            lblgameover.Visible = true;
+            overgame.Visible = true;
             GameOver = true;
             //show gambar ledakan ke atas gambar mobil player
             explosion.Visible = true; // make the image visible
@@ -303,6 +278,7 @@ namespace driving_car
             if (level == 1)
             {
                 Level.lvel2 = true;
+
             }
             else if (level == 2)
             {
@@ -328,8 +304,8 @@ namespace driving_car
             panelPause.Visible = true;
             buttonresume.Visible = false;
             lblpaused.Visible = false;
-            lblgameover.Visible = false;
-            lblfinish.Visible = true;
+            overgame.Visible = false;
+            victory.Visible = true;
             unlockLevel();
 
             if (level == 6)
@@ -351,35 +327,30 @@ namespace driving_car
                     {
                         lvl.level2();
                         Reset();
-                        random_map();
                         break;
                     }
                 case 2:
                     {
                         lvl.level3();
                         Reset();
-                        random_map();
                         break;
                     }
                 case 3:
                     {
                         lvl.level4();
                         Reset();
-                        random_map();
                         break;
                     }
                 case 4:
                     {
                         lvl.level5();
                         Reset();
-                        random_map();
                         break;
                     }
                 case 5:
                     {
                         lvl.level6();
                         Reset();
-                        random_map();
                         break;
                     }
                 default:
@@ -387,9 +358,5 @@ namespace driving_car
             }
         }
 
-        private void DrivingCar_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

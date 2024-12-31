@@ -52,34 +52,34 @@ namespace driving_car
             switch (carId)
             {
                 case 1:
-                    Car.Image = Properties.Resources.car1;
+                    Car.Image = Properties.Resources.car11;
                     break;
                 case 2:
-                    Car.Image = Properties.Resources.car2;
+                    Car.Image = Properties.Resources.car21;
                     break;
                 case 3:
-                    Car.Image = Properties.Resources.car3;
+                    Car.Image = Properties.Resources.car31;
                     break;
                 case 4:
-                    Car.Image = Properties.Resources.car4;
+                    Car.Image = Properties.Resources.car41;
                     break;
                 case 5:
-                    Car.Image = Properties.Resources.car5;
+                    Car.Image = Properties.Resources.car51;
                     break;
                 case 6:
-                    Car.Image = Properties.Resources.car6;
+                    Car.Image = Properties.Resources.car61;
                     break;
                 case 7:
-                    Car.Image = Properties.Resources.car7;
+                    Car.Image = Properties.Resources.car71;
                     break;
                 case 8:
-                    Car.Image = Properties.Resources.car8;
+                    Car.Image = Properties.Resources.car81;
                     break;
                 case 9:
-                    Car.Image = Properties.Resources.car9;
+                    Car.Image = Properties.Resources.car91;
                     break;
                 case 10:
-                    Car.Image = Properties.Resources.car10;
+                    Car.Image = Properties.Resources.car101;
                     break;
                 default:
                     break;
