@@ -35,7 +35,7 @@ namespace driving_car
             if (lvel2)
             {
                 lvl2.Enabled = true;
-
+                lvl2.BackgroundImage = Properties.Resources._2;
             }
             else
             {
@@ -45,7 +45,7 @@ namespace driving_car
             if (lvel3)
             {
                 lvl3.Enabled = true;
-
+                lvl3.BackgroundImage = Properties.Resources._3;
             }
             else
             {
@@ -55,7 +55,7 @@ namespace driving_car
             if (lvel4)
             {
                 lvl4.Enabled = true;
-
+                lvl4.BackgroundImage = Properties.Resources._4;
             }
             else
             {
@@ -65,7 +65,7 @@ namespace driving_car
             if (lvel5)
             {
                 lvl5.Enabled = true;
-
+                lvl5.BackgroundImage = Properties.Resources._5;
             }
             else
             {
@@ -75,7 +75,7 @@ namespace driving_car
             if (lvel6)
             {
                 lvl6.Enabled = true;
-                
+                lvl6.BackgroundImage = Properties.Resources._6;
             }
             else
             {
@@ -152,7 +152,6 @@ namespace driving_car
             carSpeed = 5;
             roadSpeed = 6;
             trafficSpeed = 6;
-
         }
 
         public void level3()
@@ -161,7 +160,6 @@ namespace driving_car
             carSpeed = 6;
             roadSpeed = 6;
             trafficSpeed = 7;
-
         }
 
         public void level4()
@@ -170,7 +168,6 @@ namespace driving_car
             carSpeed = 6;
             roadSpeed = 7;
             trafficSpeed = 8;
-
         }
 
         public void level5()
@@ -179,7 +176,6 @@ namespace driving_car
             carSpeed = 7;
             roadSpeed = 8;
             trafficSpeed = 9;
-
         }
 
         public void level6()
@@ -188,8 +184,6 @@ namespace driving_car
             carSpeed = 7;
             roadSpeed = 9;
             trafficSpeed = 10;
-
         }
-
     }
 }

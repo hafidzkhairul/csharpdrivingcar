@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Media;
 using System.Numerics;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
@@ -40,7 +41,6 @@ namespace driving_car
             Reset();
         }
 
-
         //reset game
         private void Reset()
         {
@@ -76,7 +76,6 @@ namespace driving_car
             panelPause.Visible = false;
             lblStart.Visible = true;
             timer1.Stop();
-
         }
 
         private void btnPause_Click(object sender, EventArgs e)
@@ -130,7 +129,6 @@ namespace driving_car
         {
             //fungsi ini jalan pas timer start/game start
             Score++;
-            panelGame.Focus();
             lblscore.Text = "" + Score;
             progressBar.Maximum = finish;
             progressBar.Value = Score;
@@ -270,7 +268,6 @@ namespace driving_car
             explosion.Location = new Point(-8, 5); // we are moving the image so its suitably positioned
             explosion.BackColor = Color.Transparent; // change the background to transparent
             explosion.BringToFront();// bring to front of the player image
-
         }
 
         private void unlockLevel()
@@ -278,7 +275,6 @@ namespace driving_car
             if (level == 1)
             {
                 Level.lvel2 = true;
-
             }
             else if (level == 2)
             {
@@ -314,7 +310,6 @@ namespace driving_car
             }
             else
             {
-
                 btnnext.Visible = true;
             }
         }
@@ -357,6 +352,5 @@ namespace driving_car
                     break;
             }
         }
-
     }
 }
