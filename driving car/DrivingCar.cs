@@ -18,22 +18,20 @@ namespace driving_car
     public partial class DrivingCar : Form
     {
         //global variables
-        int level = 1;
+        int level = 1;              //level saat ini
         int carSpeed = 5;           //speed mobil player
         int roadSpeed = 5;          //speed jalanan
         int trafficSpeed = 5;       //speed kendaraan
         int Score = 0;
-        int finish = 1000;
+        int finish = 1000;          //finish di score 1000
         bool carLeft;               //true = belok kiri
         bool carRight;              //true = belok kanan
-        //bool carUp;                 //true = keatas
-        //bool carDown;               //true = kebawah
         bool GameStarted = false;   //true = game dimulai
         bool GamePaused = false;    //true = game dipause
-        bool GameOver = false;
+        bool GameOver = false;      //true = game over
         Random rnd = new Random();
-        Menu menu = new Menu();
-        Level lvl = new Level();
+        Menu menu = new Menu();     //akses data page menu
+        Level lvl = new Level();    //akses data page level
 
         public DrivingCar()
         {
@@ -45,11 +43,12 @@ namespace driving_car
         private void Reset()
         {
             explosion.Visible = false; // hide the explosion image
-            trafficSpeed = Level.trafficSpeed; // set the traffic back to default
-            roadSpeed = Level.roadSpeed; // set the road speed back to default
+            //ambil data dari page level
+            trafficSpeed = Level.trafficSpeed;
+            roadSpeed = Level.roadSpeed;
             level = Level.level;
             carSpeed = Level.carSpeed;
-            panelGame.Focus();
+            //load mobil yg sudah dipilih
             menu.SelectCar(Menu.num_car, Player);
             lbllevel.Text = level.ToString();
             Score = 0; // reset score to 0
@@ -57,8 +56,6 @@ namespace driving_car
             Player.Top = 562; // reset player top
             carLeft = false; // reset the moving left to false
             carRight = false; // reset the moving right to false
-            //carUp = false; // reset the moving up to false
-            //carDown = false; // reset the moving down to false
             // pindah posisi AI ke luar screen
             AI1.Left = 66;
             AI1.Top = -120;
@@ -124,7 +121,7 @@ namespace driving_car
             }
         }
 
-        //fungsi utama/inti
+        //sfungsi utama/inti
         private void timer1_Tick(object sender, EventArgs e)
         {
             //fungsi ini jalan pas timer start/game start
@@ -138,7 +135,7 @@ namespace driving_car
             }
             road1.Top += roadSpeed; // move the track 1 down with the += 
             road2.Top += roadSpeed; // move the track 2 down with the += 
-            // if the track has gone past -580 then we set it back to default
+            // if the track has gone past -750 then we set it back to default
             if (road1.Top > 750)
             {
                 road1.Top = -750;
@@ -150,8 +147,6 @@ namespace driving_car
 
             if (carLeft) { Player.Left -= carSpeed; } // move the car left if the car left is true
             if (carRight) { Player.Left += carSpeed; } // move the car right if the car right is true
-            //if (carUp) { Player.Top -= carSpeed; } // move the car up if the car right is true
-            //if (carDown) { Player.Top += carSpeed; } // move the car down if the car right is true
 
             //mencegah player bergerak keluar panel game
             if (Player.Left < 1)
@@ -162,14 +157,6 @@ namespace driving_car
             {
                 carRight = false;
             }
-            //else if (Player.Top < 19)
-            //{
-            //    carUp = false;
-            //}
-            //else if (Player.Top + Player.Height > 589)
-            //{
-            //    carDown = false;
-            //}
 
             //move the AI cars down
             AI1.Top += trafficSpeed;
@@ -177,18 +164,18 @@ namespace driving_car
             //respawn the AIs and change the their images
             if (AI1.Top > panelGame.Height)
             {
-                menu.SelectCar(rnd.Next(1, 10), AI1); // change the AI car images once they left the scene
+                menu.SelectCar(rnd.Next(1, 10), AI1); // change the AI car images
                 AI1.Left = rnd.Next(2, 180); // random posisi left
                 AI1.Top = rnd.Next(100, 200) * -1; // random posisi top
             }
             if (AI2.Top > panelGame.Height)
             {
-                menu.SelectCar(rnd.Next(1, 10), AI2); // change the AI car images once they left the scene
-                AI2.Left = rnd.Next(240, 440); // random numbers where they appear on the left
-                AI2.Top = rnd.Next(100, 200) * -1; // random numbers where they appear on top
+                menu.SelectCar(rnd.Next(1, 10), AI2);
+                AI2.Left = rnd.Next(240, 440);
+                AI2.Top = rnd.Next(100, 200) * -1;
             }
 
-            // if player hits AI1 OR player hits AI2
+            // jika menabrak maka game over
             if (Player.Bounds.IntersectsWith(AI1.Bounds) || Player.Bounds.IntersectsWith(AI2.Bounds))
             {
                 gameOver(); // this will run when the player hits an AI object
@@ -211,14 +198,6 @@ namespace driving_car
             {
                 carRight = true;
             }
-            //if (e.KeyCode == Keys.Up && Player.Top > panelGame.Height)
-            //{
-            //    carUp = true;
-            //}
-            //if (e.KeyCode == Keys.Down && Player.Top + Player.Height < panelGame.Height)
-            //{
-            //    carDown = true;
-            //}
         }
 
         private void stopCar(object sender, KeyEventArgs e)
@@ -233,16 +212,6 @@ namespace driving_car
             {
                 carRight = false;
             }
-            // if the UP key is up we set the car right to false
-            //if (e.KeyCode == Keys.Up)
-            //{
-            //    carUp = false;
-            //}
-            //// if the DOWN key is up we set the car right to false
-            //if (e.KeyCode == Keys.Down)
-            //{
-            //    carDown = false;
-            //}
 
             //space for pause the game
             if (e.KeyCode == Keys.Space)
@@ -272,6 +241,7 @@ namespace driving_car
 
         private void unlockLevel()
         {
+            //buka level selanjutnya
             if (level == 1)
             {
                 Level.lvel2 = true;
@@ -313,7 +283,7 @@ namespace driving_car
                 btnnext.Visible = true;
             }
         }
-
+        //pindah ke level selanjutnya
         private void btnnext_Click(object sender, EventArgs e)
         {
             switch (level)

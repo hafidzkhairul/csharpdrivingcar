@@ -17,7 +17,6 @@ namespace driving_car
         public static int carSpeed = 5;
         public static int roadSpeed = 5;
         public static int trafficSpeed = 5;
-        public static bool lvel1 = false;
         public static bool lvel2 = false;
         public static bool lvel3 = false;
         public static bool lvel4 = false;
@@ -27,10 +26,10 @@ namespace driving_car
         public Level()
         {
             InitializeComponent();
-            disable_level();
+            enable_level();
         }
 
-        private void disable_level()
+        private void enable_level()
         {
             if (lvel2)
             {

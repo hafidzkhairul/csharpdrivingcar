@@ -18,7 +18,7 @@ namespace driving_car
         public Menu()
         {
             InitializeComponent();
-            SelectCar(num_car, selectedCar);
+            SelectCar(num_car, selectedCar);    //init aset mobil yg sudah dipilih sebelumnya
         }
 
         private void slcright_Click(object sender, EventArgs e)
@@ -38,13 +38,13 @@ namespace driving_car
         private void btnStart_Click(object sender, EventArgs e)
         {
             Level level = new Level();
-            level.Show();
+            level.Show();   //show page level
             this.Hide();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close();   //close form
         }
 
         public void SelectCar(int carId, PictureBox Car)
